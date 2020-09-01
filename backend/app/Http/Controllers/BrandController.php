@@ -110,7 +110,7 @@ public function updateBrands(Request $request){
   unlink(base_path('public/brand_images/'.$dlt_img1->brand_img));
   $update_img=BrandModel::where('b_id',$id)->update(['brand_img'=>$one]);
    }
-
+   
 $update=BrandModel::where('b_id',$id)->update([
     'en_name'=>$en_name,
     'bn_name'=>$bn_name,

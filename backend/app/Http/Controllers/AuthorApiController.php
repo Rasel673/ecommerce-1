@@ -10,6 +10,17 @@ use Illuminate\Support\Facades\Hash;
 class AuthorApiController extends Controller
 {
    public function register(Request $request){
+
+    $this->validate($request, [
+      'email' => 'required|unique',
+      'password' => 'required|min:8',  
+  ],
+  [
+   'email.required' => 'email name is required and must be unique',
+   'password.required'  => 'Password required minimum 8 digit',
+   
+]
+);
     $email=$request->input('email');
     $count = User::where('email',$email)->count();
 

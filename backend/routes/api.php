@@ -17,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+/////frontend view routes here===========================================
+Route::get('/shopProducts','HomeController@index');
+Route::get('/mainSlider','HomeController@mainSlider');
+Route::get('/midSlider','HomeController@midSlider');
+Route::get('/hotDeal','HomeController@hotDeal');
+Route::get('/hotNew','HomeController@hotNew');
+Route::get('/bestRated','HomeController@bestRated');
+Route::get('/buyone_getone','HomeController@buyone_getone');
+Route::get('/ternd','HomeController@ternd');
+Route::get('/SubcatgoryShow','HomeController@Subcategories');
+Route::get('/catgoryShow','HomeController@categories');
+
+
+
+////backend admin panel routes here==============================================
 ///admin login register-----------------
 Route::post('/register','AuthorApiController@register');
 Route::post('/login','AuthorApiController@login');
